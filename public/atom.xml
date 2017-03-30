@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Grit</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://shanergang.github.io/"/>
+  <updated>2017-03-30T08:56:09.000Z</updated>
+  <id>https://shanergang.github.io/</id>
+  
+  <author>
+    <name>Ergang SHAN</name>
+    <email>shan_ergang@163.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo-进阶</title>
+    <link href="https://shanergang.github.io/2017/03/30/Hexo-%E8%BF%9B%E9%98%B6/"/>
+    <id>https://shanergang.github.io/2017/03/30/Hexo-进阶/</id>
+    <published>2017-03-30T05:50:13.000Z</published>
+    <updated>2017-03-30T08:56:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>个性化设置：更换主题；标签与分类；站内搜索；订阅；站点地图；字数统计。</p>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><ul>
+<li>下载主题文件，保存到Hexo目录下的themes文件夹下。修改_config.yml文件中的themes选项。<figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Extensions</div><div class="line">## Plugins: https://hexo.io/plugins/</div><div class="line">## Themes: https://hexo.io/themes/</div><div class="line">theme: &lt;theme folder name&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="自定义模板"><a href="#自定义模板" class="headerlink" title="自定义模板"></a>自定义模板</h2><ul>
+<li>新建md文件模板，保存到Hexo目录下的scaffolds文件夹下。</li>
+</ul>
+<a id="more"></a>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><ul>
+<li><p>安装插件</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-<span class="keyword">tag</span> <span class="title">--save</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>新建标签文件，自动存放在hexo目录下。</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">create</span> <span class="keyword">new</span> page ”tags“</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改tags目录下index.md文件的front-matter</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">type:</span> <span class="string">"tags"</span></div><div class="line"><span class="string">comments:</span> <span class="literal">false</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul>
+<li><p>安装插件</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo-generator-<span class="keyword">category</span> <span class="comment">--save</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>新建分类和标签文件，自动存放在hexo目录下。</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">create</span> <span class="keyword">new</span> page <span class="string">"categories"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>修改tags目录下index.md文件的front-matter</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">type:</span> <span class="string">"categories"</span></div><div class="line"><span class="string">comments:</span> <span class="literal">false</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="设定首页-归档-标签页面文章的篇数"><a href="#设定首页-归档-标签页面文章的篇数" class="headerlink" title="设定首页/归档/标签页面文章的篇数"></a>设定首页/归档/标签页面文章的篇数</h2><ul>
+<li><p>安装插件</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo-generator-<span class="keyword">index</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-generator-<span class="keyword">archive</span> <span class="comment">--save</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>修改Themes目录下的_config.yml文件</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="attr">index_generator:</span></div><div class="line"><span class="attr">    per_page:</span> <span class="number">5</span></div><div class="line"></div><div class="line"><span class="attr">archive_generator:</span></div><div class="line"><span class="attr">    per_page:</span> <span class="number">20</span></div><div class="line"><span class="attr">    yearly:</span> <span class="literal">true</span></div><div class="line"><span class="attr">    monthly:</span> <span class="literal">true</span></div><div class="line"></div><div class="line"><span class="attr">tag_generator:</span></div><div class="line"><span class="attr">    per_page:</span> <span class="number">10</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="站内搜索"><a href="#站内搜索" class="headerlink" title="站内搜索"></a>站内搜索</h2><ul>
+<li><p>安装插件</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo-generator-searchdb <span class="comment">--save</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>修改Hexo目录下的_config.yml文件</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">search:</span></div><div class="line"><span class="symbol">  path:</span> search.xml</div><div class="line"><span class="symbol">  field:</span> post</div><div class="line"><span class="symbol">  format:</span> html</div><div class="line"><span class="symbol">  limit:</span> <span class="number">10000</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="订阅"><a href="#订阅" class="headerlink" title="订阅"></a>订阅</h2><ul>
+<li><p>安装插件</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo-generator-feed <span class="comment">--save</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>修改Hexo目录下的_config.yml文件</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">plugin:</span></div><div class="line">    hexo-generator-feed</div><div class="line"><span class="symbol"></span></div><div class="line">feed:</div><div class="line"><span class="symbol">    type:</span> atom</div><div class="line"><span class="symbol">    path:</span> atom.xml</div><div class="line"><span class="symbol">    limit:</span> <span class="number">20</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>修改Themes目录下的_config.yml文件</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">rss:</span> /atom.xml</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="站点地图"><a href="#站点地图" class="headerlink" title="站点地图"></a>站点地图</h2><ul>
+<li><p>安装插件</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-generator-baidu-sitemap <span class="comment">--save</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>修改Hexo目录下的_config.yml文件</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">plugins:</span></div><div class="line">    hexo-generator-sitemap</div><div class="line">    hexo-generator-baidu-sitemap</div><div class="line"><span class="symbol">    </span></div><div class="line">sitemap:</div><div class="line"><span class="symbol">    path:</span> sitemap.xml</div><div class="line"><span class="symbol"></span></div><div class="line">baidusitemap:</div><div class="line"><span class="symbol">  path:</span> baidusitemap.xml</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h2><ul>
+<li><p>安装插件</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo-wordcount <span class="comment">--save</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>修改Themes目录下的_config.yml文件</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">post_wordcount:</span></div><div class="line"><span class="attr">  item_text:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  wordcount:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  min2read:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;个性化设置：更换主题；标签与分类；站内搜索；订阅；站点地图；字数统计。&lt;/p&gt;
+&lt;h2 id=&quot;更换主题&quot;&gt;&lt;a href=&quot;#更换主题&quot; class=&quot;headerlink&quot; title=&quot;更换主题&quot;&gt;&lt;/a&gt;更换主题&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;下载主题文件，保存到Hexo目录下的themes文件夹下。修改_config.yml文件中的themes选项。&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# Extensions&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;## Plugins: https://hexo.io/plugins/&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;## Themes: https://hexo.io/themes/&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;theme: &amp;lt;theme folder name&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;自定义模板&quot;&gt;&lt;a href=&quot;#自定义模板&quot; class=&quot;headerlink&quot; title=&quot;自定义模板&quot;&gt;&lt;/a&gt;自定义模板&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;新建md文件模板，保存到Hexo目录下的scaffolds文件夹下。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Hexo博客构建" scheme="https://shanergang.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2%E6%9E%84%E5%BB%BA/"/>
+    
+    
+      <category term="Hexo" scheme="https://shanergang.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo-基础</title>
+    <link href="https://shanergang.github.io/2017/03/29/Hexo-%E5%9F%BA%E7%A1%80/"/>
+    <id>https://shanergang.github.io/2017/03/29/Hexo-基础/</id>
+    <published>2017-03-29T12:05:01.000Z</published>
+    <updated>2017-03-30T08:59:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>通过 npm 安装 Hexo 并初始化；将 Hexo 文件夹与 Git 账号关联；添加新文件；编译 Hexo 文件。</p>
+<h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><ul>
+<li><p>安装 nvm</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装 node.js</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nvm install stable</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装 Hexo</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-</div><div class="line">npm install hexo --save</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="初始化-Hexo"><a href="#初始化-Hexo" class="headerlink" title="初始化 Hexo"></a>初始化 Hexo</h2><ul>
+<li><p>初始化</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装插件</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo-<span class="keyword">server</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-deployer-heroku <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-deployer-rsync <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-deployer-openshift <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-renderer-marked@<span class="number">0.2</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-renderer-stylus@<span class="number">0.2</span> <span class="comment">--save</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="关联-Git"><a href="#关联-Git" class="headerlink" title="关联 Git"></a>关联 Git</h2><ul>
+<li><p>创建Github上个人主页存放仓库，库名“<username>/<username>.github.io”，访问地址“https://<username>.github.io”</username></username></username></p>
+</li>
+<li><p>修改 _config.yml 文件</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line">  <span class="attribute">type</span>: git</div><div class="line">  <span class="attribute">repository</span>: <span class="attribute">https</span>:<span class="comment">//github.com/shanergang/shanergang.github.io.git</span></div><div class="line">  <span class="attribute">branch</span>: master</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="添加新文件"><a href="#添加新文件" class="headerlink" title="添加新文件"></a>添加新文件</h2><ul>
+<li>根据模板，新建md文件，自动存放在_posts目录下。<figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new &lt;template name&gt; "&lt;file name&gt;" #新建文章</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><ul>
+<li><p>编译 Hexo</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure>
+</li>
+<li><p>生成主页</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+</li>
+<li><p>本地预览</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;通过 npm 安装 Hexo 并初始化；将 Hexo 文件夹与 Git 账号关联；添加新文件；编译 Hexo 文件。&lt;/p&gt;
+&lt;h2 id=&quot;安装-Hexo&quot;&gt;&lt;a href=&quot;#安装-Hexo&quot; class=&quot;headerlink&quot; title=&quot;安装 Hexo&quot;&gt;&lt;/a&gt;安装 Hexo&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;安装 nvm&lt;/p&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装 node.js&lt;/p&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;nvm install stable&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装 Hexo&lt;/p&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install -g hexo-&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm install hexo --save&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Hexo博客构建" scheme="https://shanergang.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2%E6%9E%84%E5%BB%BA/"/>
+    
+    
+      <category term="Hexo" scheme="https://shanergang.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>

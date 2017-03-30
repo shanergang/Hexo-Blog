@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[Hexo-进阶]]></title>
+      <url>%2F2017%2F03%2F30%2FHexo-%E8%BF%9B%E9%98%B6%2F</url>
+      <content type="text"><![CDATA[个性化设置：更换主题；标签与分类；站内搜索；订阅；站点地图；字数统计。 更换主题 下载主题文件，保存到Hexo目录下的themes文件夹下。修改_config.yml文件中的themes选项。1234# Extensions## Plugins: https://hexo.io/plugins/## Themes: https://hexo.io/themes/theme: &lt;theme folder name&gt; 自定义模板 新建md文件模板，保存到Hexo目录下的scaffolds文件夹下。 标签 安装插件 1npm install hexo-generator-tag --save 新建标签文件，自动存放在hexo目录下。 1hexo create new page ”tags“ 修改tags目录下index.md文件的front-matter 12type: "tags"comments: false 分类 安装插件 1npm install hexo-generator-category --save 新建分类和标签文件，自动存放在hexo目录下。 1hexo create new page "categories" 修改tags目录下index.md文件的front-matter 12type: "categories"comments: false 设定首页/归档/标签页面文章的篇数 安装插件 12npm install hexo-generator-index --savenpm install hexo-generator-archive --save 修改Themes目录下的_config.yml文件 12345678910index_generator: per_page: 5archive_generator: per_page: 20 yearly: true monthly: truetag_generator: per_page: 10 站内搜索 安装插件 1npm install hexo-generator-searchdb --save 修改Hexo目录下的_config.yml文件 12345search: path: search.xml field: post format: html limit: 10000 订阅 安装插件 1npm install hexo-generator-feed --save 修改Hexo目录下的_config.yml文件 1234567plugin: hexo-generator-feedfeed: type: atom path: atom.xml limit: 20 修改Themes目录下的_config.yml文件 1rss: /atom.xml 站点地图 安装插件 12npm install hexo-generator-sitemap --savenpm install hexo-generator-baidu-sitemap --save 修改Hexo目录下的_config.yml文件 123456789plugins: hexo-generator-sitemap hexo-generator-baidu-sitemap sitemap: path: sitemap.xmlbaidusitemap: path: baidusitemap.xml 字数统计 安装插件 1npm install hexo-wordcount --save 修改Themes目录下的_config.yml文件 1234post_wordcount: item_text: true wordcount: true min2read: true]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hexo-基础]]></title>
+      <url>%2F2017%2F03%2F29%2FHexo-%E5%9F%BA%E7%A1%80%2F</url>
+      <content type="text"><![CDATA[通过 npm 安装 Hexo 并初始化；将 Hexo 文件夹与 Git 账号关联；添加新文件；编译 Hexo 文件。 安装 Hexo 安装 nvm 1curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash 安装 node.js 1nvm install stable 安装 Hexo 12npm install -g hexo-npm install hexo --save 初始化 Hexo 初始化 1hexo init 安装插件 1234567npm install hexo-server --savenpm install hexo-deployer-git --savenpm install hexo-deployer-heroku --savenpm install hexo-deployer-rsync --savenpm install hexo-deployer-openshift --savenpm install hexo-renderer-marked@0.2 --savenpm install hexo-renderer-stylus@0.2 --save 关联 Git 创建Github上个人主页存放仓库，库名“/.github.io”，访问地址“https://.github.io” 修改 _config.yml 文件 1234deploy: type: git repository: https://github.com/shanergang/shanergang.github.io.git branch: master 添加新文件 根据模板，新建md文件，自动存放在_posts目录下。1hexo new &lt;template name&gt; "&lt;file name&gt;" #新建文章 编译 编译 Hexo 1hexo generate 生成主页 1hexo deploy 本地预览 1hexo server]]></content>
+    </entry>
+
+    
+  
+  
+</search>
